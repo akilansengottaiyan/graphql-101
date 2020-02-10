@@ -1,0 +1,44 @@
+{
+  "name": "dawn-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "flow": "flow"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.+(js|json|css|ts|tsx)": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akilansengottaiyan/dawn-api.git"
+  },
+  "author": "Akilan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akilansengottaiyan/dawn-api/issues"
+  },
+  "homepage": "https://github.com/akilansengottaiyan/dawn-api#readme",
+  "dependencies": {
+    "apollo-server": "^2.10.0",
+    "apollo-server-express": "^2.10.0",
+    "express": "^4.17.1",
+    "graphql": "^14.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "flow-bin": "^0.118.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1"
+  }
+}
