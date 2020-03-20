@@ -1,0 +1,33 @@
+type User {
+    id: ID! @id
+    createdAt: DateTime! @createdAt
+    updatedAt: DateTime! @updatedAt
+    firstName: String!
+    lastName : String
+    email : String! @unique
+    password : String!
+    apps : [App]!
+}
+type App {
+    id : ID! @id
+    url : String!
+    createdBy : User!
+    flows: [Flow!]!
+}
+type Flow {
+    id: ID! @id
+    title: String! @unique
+    flowType: FlowType!
+    associatedWith: App!
+    steps : [Step]!
+}
+type Step {
+    id: ID! @id
+    order: Int
+    text: String!
+    associatedWith : Flow! 
+}
+enum FlowType {
+      MODAL
+      HOTSPOT
+}
